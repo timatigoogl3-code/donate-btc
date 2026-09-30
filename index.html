@@ -12,8 +12,11 @@
 </head>
 <body>
   <div class="bg-grid"></div>
+  <canvas id="fx" class="fx"></canvas>
 
   <main class="card">
+    <div id="thanks" class="thanks" aria-live="polite"></div>
+
     <header>
       <div class="coin">₿</div>
       <h1>Поддержите меня</h1>
@@ -51,6 +54,41 @@
       <li>Сеть <strong>Lightning (LNURL)</strong> — тоже подойдёт, если кошелёк поддерживает.</li>
       <li>После отправки транзакция подтверждается 0–6 блоками.</li>
     </ul>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Поддержавшие</h2>
+        <span class="status" id="status">подключение…</span>
+      </div>
+
+      <div class="goal">
+        <div class="goal-row">
+          <span class="goal-total"><strong id="totalBtc">0.0</strong> BTC <em id="totalUsd"></em></span>
+          <span class="goal-goal" id="goal">цель 0.05 BTC</span>
+        </div>
+        <div class="bar"><div class="bar-fill" id="bar"></div></div>
+        <p class="goal-sub"><span id="supporters">0</span> транзакций · обновление каждые 30 сек</p>
+      </div>
+
+      <ul class="feed" id="feed"><li class="empty">Загружаю историю…</li></ul>
+    </section>
+
+    <section class="panel">
+      <h2>Чем больше — тем эффектнее</h2>
+      <div class="tiers" id="tiers"></div>
+      <p class="tiers-note">Сумма доната определяет эффект на странице: конфетти, фейерверки, дождь биткоинов — и публичная благодарность в ленте.</p>
+    </section>
+
+    <div class="row toggle-row">
+      <div class="stat">
+        <span class="label">Звук эффектов</span>
+        <button id="soundToggle" class="switch" type="button" data-on="0" aria-pressed="false">выключен</button>
+      </div>
+      <div class="stat">
+        <span class="label">Статус сети</span>
+        <span class="value" id="liveDot"><span class="dot-live"></span> mainnet</span>
+      </div>
+    </div>
   </main>
 
   <footer>Сделано с ♥ · Bitcoin only</footer>
@@ -59,5 +97,7 @@
 
   <script src="vendor/qrcode.min.js"></script>
   <script src="app.js"></script>
+  <script src="fx.js"></script>
+  <script src="mempool.js"></script>
 </body>
 </html>
