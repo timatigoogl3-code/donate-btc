@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Поддержать меня — 0.0005 BTC</title>
+<meta name="description" content="Страница для поддержки автора: отправьте 0.0005 BTC на Bitcoin-адрес bc1qx4wlpqvlp46rf25w7vlej267ux6k0k8dl775gm" />
+<meta property="og:title" content="Поддержать меня — 0.0005 BTC" />
+<meta property="og:description" content="Bitcoin-адрес для доната: bc1qx4wlpqvlp46rf25w7vlej267ux6k0k8dl775gm" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>₿</text></svg>" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+
+  <main class="card">
+    <header>
+      <div class="coin">₿</div>
+      <h1>Поддержите меня</h1>
+      <p class="sub">Отправьте, пожалуйста, <strong>0.0005&nbsp;BTC</strong> — это очень помогает.</p>
+    </header>
+
+    <div class="qr-wrap">
+      <div id="qr" class="qr" aria-label="QR-код с Bitcoin-адресом"></div>
+      <button id="qrToggle" class="qr-toggle" type="button">Показать адрес</button>
+    </div>
+
+    <div class="addr" id="addr" data-full="bc1qx4wlpqvlp46rf25w7vlej267ux6k0k8dl775gm">
+      <code>bc1qx4wlpqvlp46rf25w7vlej267ux6k0k8dl775gm</code>
+      <button id="copyAddr" class="copy" type="button" title="Скопировать адрес">копировать</button>
+    </div>
+
+    <div class="row">
+      <div class="stat">
+        <span class="label">Сумма</span>
+        <span class="value">0.0005 BTC</span>
+      </div>
+      <div class="stat">
+        <span class="label">≈ в долларах</span>
+        <span class="value" id="usd">загрузка…</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a id="payLink" class="btn primary" href="#">Открыть кошелёк</a>
+      <a class="btn" href="https://mempool.space/address/bc1qx4wlpqvlp46rf25w7vlej267ux6k0k8dl775gm" target="_blank" rel="noopener">Проверить адрес</a>
+    </div>
+
+    <ul class="notes">
+      <li>Только сеть <strong>Bitcoin mainnet</strong> (bc1 / Taproot). Комиссия сети вычитается сверх суммы.</li>
+      <li>Сеть <strong>Lightning (LNURL)</strong> — тоже подойдёт, если кошелёк поддерживает.</li>
+      <li>После отправки транзакция подтверждается 0–6 блоками.</li>
+    </ul>
+  </main>
+
+  <footer>Сделано с ♥ · Bitcoin only</footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="vendor/qrcode.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
