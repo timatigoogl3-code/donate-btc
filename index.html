@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Поддержать разработку — Bitcoin, Monero, Solana</title>
-<meta name="description" content="Приём донатов в BTC, XMR и SOL. Адреса, QR-коды и суммы на одной странице." />
+<title>Поддержать разработку — Bitcoin, Monero, Solana, Ethereum</title>
+<meta name="description" content="Приём донатов в BTC, XMR, SOL и ETH. Адреса, QR-коды и суммы на одной странице." />
 <meta name="theme-color" content="#fcfaf7" media="(prefers-color-scheme: light)" />
 <meta name="theme-color" content="#1b1917" media="(prefers-color-scheme: dark)" />
-<meta property="og:title" content="Поддержать разработку — BTC, XMR, SOL" />
-<meta property="og:description" content="Bitcoin, Monero и Solana на одной странице." />
+<meta property="og:title" content="Поддержать разработку — BTC, XMR, SOL, ETH" />
+<meta property="og:description" content="Bitcoin, Monero, Solana и Ethereum на одной странице." />
 <link rel="stylesheet" href="style.css" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23ed8300'/><text x='16' y='23' font-family='Georgia,serif' font-size='21' font-weight='600' text-anchor='middle' fill='%231b1917'>b</text></svg>" />
 </head>
@@ -22,7 +22,7 @@
 
     <header class="masthead">
       <p class="eyebrow">Поддержка разработки</p>
-      <h1 class="display">Принимаю донаты в трёх сетях</h1>
+      <h1 class="display">Принимаю донаты в четырёх сетях</h1>
       <p class="lede">
         Выберите валюту, QR-код и сумма обновятся. Если удобнее перевести другую
         сумму — <strong>принимается любой размер</strong>, эффект на странице
@@ -37,6 +37,8 @@
               aria-controls="panel-xmr" aria-selected="false" tabindex="-1">Monero</button>
       <button class="tab" role="tab" id="tab-sol" data-currency="sol"
               aria-controls="panel-sol" aria-selected="false" tabindex="-1">Solana</button>
+      <button class="tab" role="tab" id="tab-eth" data-currency="eth"
+              aria-controls="panel-eth" aria-selected="false" tabindex="-1">Ethereum</button>
     </div>
 
     <hr class="rule" />
@@ -147,6 +149,44 @@
         <p class="callout">
           Сумму в кошельке нужно ввести вручную: единого стандарта ссылки с
           суммой у Solana нет, а QR содержит только адрес.
+        </p>
+      </div>
+    </section>
+
+    <!-- Ethereum -->
+    <section class="pay" role="tabpanel" id="panel-eth" aria-labelledby="tab-eth" tabindex="0" hidden>
+      <div class="qr-slot">
+        <div class="qr" data-qr="eth"><span class="qr-fallback">QR-код</span></div>
+        <button class="qr-swap" type="button" data-qr-toggle="eth">Показать адрес</button>
+      </div>
+      <div class="pay-body">
+        <span class="label">Адрес</span>
+        <div class="address">
+          <code data-address="eth">0xc4eFE9f2C090a54a78714403A596Ea72BbA27094</code>
+          <button class="btn" type="button" data-copy="eth">Скопировать</button>
+        </div>
+        <div class="summary">
+          <div>
+            <span class="label">Рекомендуемая сумма</span>
+            <span class="value amount"><span data-amount="eth">0.015</span> <span class="unit">ETH</span></span>
+          </div>
+          <div>
+            <span class="label">Примерно в долларах</span>
+            <span class="value amount" data-usd="eth">—</span>
+          </div>
+          <div>
+            <span class="label">Сеть</span>
+            <span class="value">Ethereum <span class="unit">mainnet</span></span>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" data-uri="eth" href="#">Отправить в кошелёк</a>
+          <a class="btn" target="_blank" rel="noopener"
+             href="https://eth.blockscout.com/address/0xc4eFE9f2C090a54a78714403A596Ea72BbA27094">Проверить адрес</a>
+        </div>
+        <p class="callout">
+          Сумму в кошельке нужно ввести вручную: единого стандарта ссылки с
+          суммой у Ethereum нет, а QR содержит только адрес.
         </p>
       </div>
     </section>

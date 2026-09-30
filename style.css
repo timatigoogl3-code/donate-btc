@@ -641,7 +641,7 @@ a { color: var(--text-accent); }
   .sheet { padding: 28px 20px; }
   :root { --t-display: 32px; }
   .tabs { width: 100%; }
-  .tab { padding: 0 10px; }
+  .tab { padding: 0 8px; font-size: var(--t-caption); }
   .pay { grid-template-columns: minmax(0, 1fr); gap: 22px; }
   .qr { width: 148px; height: 148px; }
   .address code { flex: 1 1 100%; }

@@ -23,9 +23,17 @@ const CURRENCIES = {
     uri: (address) => `solana:${address}`,
     qrWithAmount: false,
   },
+  eth: {
+    code: "ETH",
+    name: "Ethereum",
+    decimals: 18,
+    /* EIP-681: базовая форма без суммы */
+    uri: (address) => `ethereum:${address}`,
+    qrWithAmount: false,
+  },
 };
 
-const PRICE_IDS = { btc: "bitcoin", xmr: "monero", sol: "solana" };
+const PRICE_IDS = { btc: "bitcoin", xmr: "monero", sol: "solana", eth: "ethereum" };
 const seenKey = (currency) => `donate.seen.${currency}.v1`;
 
 /* tracker.js читает курсы напрямую */
@@ -166,7 +174,7 @@ for (const c of Object.keys(CURRENCIES)) {
 async function loadPrices() {
   try {
     const response = await fetch(
-      "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,monero,solana&vs_currencies=usd",
+      "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,monero,solana,ethereum&vs_currencies=usd",
       { cache: "no-store" }
     );
     if (response.ok) {
